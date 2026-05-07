@@ -1,21 +1,50 @@
 -- Question 1: Display all employees
-SELECT * FROM Employee;
+SELECT *
+FROM Employee;
 
--- Question 2: Employees with salary > 50000
-SELECT name, salary FROM Employee
-WHERE salary > 50000;
+-- Question 2
+SELECT name,
+salary
+FROM Employee;
 
--- Question 3: Employees and departments
-SELECT e.name, d.name AS department
+
+-- Question 3:
+SELECT name, age
+FROM Employee
+WHERE age>30;
+
+
+-- Question 4:
+SELECT *
+FROM Department
+-- Question 5: 
+SELECT e.name, d.name
 FROM Employee e
 JOIN Department d
-ON e.department_id = d.department_id;
+ON e.department_id = d.department_id
+WHERE d.name = 'IT';
 
--- Question 4: Count employees in each department
-SELECT department_id, COUNT(*) 
+--Question 6:
+SELECT name
 FROM Employee
-GROUP BY department_id;
+WHERE name like 'J%';
 
--- Question 5: Employees without department
-SELECT * FROM Employee
-WHERE department_id IS NULL;
+--Question 7:
+SELECT name
+FROM Employee
+WHERE name like '%e';
+
+--Question 8:
+SELECT name
+FROM Employee
+WHERE name like '%a%';
+
+--Question 9:
+SELECT name
+FROM Employee
+WHERE LENGTH(name)=9;
+
+--Question 10:
+SELECT name
+FROM Employee
+WHERE name LIKE '_o%';
